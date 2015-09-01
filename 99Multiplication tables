@@ -1,0 +1,37 @@
+<style type="text/css">
+        *{margin: 0; padding: 0}
+        ul,li{list-style: none}
+        #tab{width: 900px; height: 270px; position: absolute; left:50%; top:50%; margin-left: -450px; margin-top: -135px; border: 1px solid #00FF99; border-radius: 10px; padding: 10px}
+        #tab li{height: 30px; line-height: 30px}
+        #tab li span{width: 100px; height: 30px; display: inline-block; text-align: center}
+        .c1{background: #f7c942}
+        .c2{background: #006b52}
+        .c3{background: #008000}
+    </style>
+    <div id="tab">
+   <!-- <ul>
+        <li class="c1"><span>1*1=1</span></li>
+        <li class="c2"><span>1*2=2</span><span>2*2=4</span></li>
+        <li class="c3"><span>1*3=3</span><span>2*3=6</span><span>3*3=9</span></li>
+    </ul>-->
+</div>
+<script>
+    var oTab=document.getElementById("tab");
+    var str = "";
+    str += "<ul>";
+    for (var i = 1; i <= 9; i++) {
+        str += "<li>";
+        for (var j = 1; j <= i; j++) {
+            str += "<span>" + j + " * " + i + " = " + (j * i) + "</span>";
+        }
+        str += "</li>";
+    }
+    str += "</ul>";
+    var oTab = document.getElementById("tab");
+    oTab.innerHTML = str;
+
+    var oSpans = oTab.getElementsByTagName("span");
+    for (var i = 0; i < oSpans.length; i++) {
+        oSpans[i].className = "c" + (i % 3);
+    }
+</script>
